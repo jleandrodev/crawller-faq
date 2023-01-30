@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/styles.css">
+
+    <title>Crawller Find FAQ Content</title>
+    <style>
+        td{
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container-table">
+            <h1>FAQ in page:</h1>
+            
+            <Table>
+                <tr>
+                    <td id="head">URL</td>
+                    <td id="head">Faq in page</td>
+                </tr>
+                <% for(let i = 0; i < faq.length; i++ ){ %>
+                    <% if(faq[i].questions > 0) { %> 
+                        <% for(let j = 1; j <= faq[i].questions; j++) { %> 
+                            <tr>
+                                    <td>
+                                        <%- faq[i].url  %> 
+                                    </td>
+                                    <td>
+                                        <%- faq[i][`question${j}`]  %> 
+                                    </td>
+                            </tr>
+                        <% } %> 
+                    <% } %>   
+                <% } %>
+            </Table>
+            <a href="/download">
+                <button>DONWLOAD FILE</button>
+            </a>
+
+
+    </div>
+    <script>
+        
+    </script>
+</body>
+
+</html>
